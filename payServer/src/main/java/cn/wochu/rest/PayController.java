@@ -1,5 +1,6 @@
 package cn.wochu.rest;
 
+import cn.wochu.config.MyJdbcConfig;
 import cn.wochu.feign.CouponRemoteService;
 import cn.wochu.feign.OrderRemoteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,9 @@ public class PayController {
     @Autowired
     private OrderRemoteService orderRemoteService;
 
+    @Autowired
+    private MyJdbcConfig myJdbcConfig;
+
     @RequestMapping("/paysuccess")
     @ResponseBody
     public Map<String,String> payCallback(){
@@ -39,6 +43,7 @@ public class PayController {
         resultMap.put("orderInfo",orderInfo);
         resultMap.put("couponInfo",couponInfo);
         resultMap.put("code","success");
+        resultMap.put("jdbcInfo",myJdbcConfig.toString());
         return resultMap;
     }
 

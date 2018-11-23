@@ -16,11 +16,18 @@
     <url>http://www.example.com</url>
 
     <dependencies>
-        <!--Feign-->
+        <!--Feign 声明式的伪Http客户端，使得写Http客户端变得更简单-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-feign</artifactId>
         </dependency>
+
+        <!--配置服务 客户端-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+
     </dependencies>
 
 </project>

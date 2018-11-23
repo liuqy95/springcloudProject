@@ -14,6 +14,8 @@
         <module>OrderServer</module>
         <module>payServer</module>
         <module>zuulService</module>
+        <module>hystrixdashboardServer</module>
+        <module>configServer</module>
     </modules>
 
     <parent>
