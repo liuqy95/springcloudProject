@@ -6,7 +6,7 @@ import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(value = "orderServer",path = "/orders",configuration = FeignConfig.class,fallback = OrderRemoteHystrix.class)
+@FeignClient(value = "wochu-order-Server",path = "/orders",configuration = FeignConfig.class,fallback = OrderRemoteHystrix.class)
 public interface OrderRemoteService {
 
     @GetMapping("/orderAdd/{orderId}/{createdate}")

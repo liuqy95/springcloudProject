@@ -6,7 +6,7 @@ import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(value = "couponService",path = "/coupon",configuration = FeignConfig.class,fallback = CouponRemoteHystrix.class)
+@FeignClient(value = "wochu-coupon-Service",path = "/coupon",configuration = FeignConfig.class,fallback = CouponRemoteHystrix.class)
 public interface CouponRemoteService {
 
     @GetMapping("/couponDist/{taskid}")
