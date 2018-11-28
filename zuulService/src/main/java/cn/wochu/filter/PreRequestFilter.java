@@ -3,6 +3,7 @@ package cn.wochu.filter;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import org.apache.commons.lang.StringUtils;
+import org.springframework.cloud.netflix.zuul.filters.support.FilterConstants;
 import org.springframework.http.HttpStatus;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,12 +12,12 @@ public class PreRequestFilter extends ZuulFilter {
 
     @Override
     public String filterType() {
-        return "pre";
+        return FilterConstants.PRE_TYPE;
     }
 
     @Override
     public int filterOrder() {
-        return 0;
+        return FilterConstants.SEND_ERROR_FILTER_ORDER;
     }
 
     @Override

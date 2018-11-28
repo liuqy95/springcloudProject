@@ -4,6 +4,7 @@ import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import org.apache.commons.io.IOUtils;
 import org.springframework.cloud.netflix.ribbon.RibbonHttpResponse;
+import org.springframework.cloud.netflix.zuul.filters.support.FilterConstants;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,12 +13,12 @@ public class RecodeNoteFilter extends ZuulFilter{
 
     @Override
     public String filterType() {
-        return "post";
+        return FilterConstants.POST_TYPE;
     }
 
     @Override
     public int filterOrder() {
-        return 1;
+        return FilterConstants.DEBUG_FILTER_ORDER;
     }
 
     @Override

@@ -32,4 +32,10 @@ public class CouponController {
         return returnMap;
     }
 
+    @RequestMapping("/zipKinRequest")
+    public String zipKinRequest(){
+        int port = ServiceInfoUtil.getPort();
+        return "当前请求的应用端口号为：" + port;
+    }
+
 }
